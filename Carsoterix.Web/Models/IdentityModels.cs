@@ -21,7 +21,11 @@ namespace Carsoterix.Web.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<CarType> CarType { get; set; }
         public DbSet<Car> Cars { get; set; }
+        public DbSet<Bank> Bank { get; set; }
+        public DbSet<CarOwner> CarOwner { get; set; }
+        public DbSet<Membershiptype> Membershiptype { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -1,7 +1,53 @@
-﻿@model Carsoterix.Web.Models.Car
+﻿@model IEnumerable<Carsoterix.Web.Models.Car>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>@Model.CarName</h2>
+<h2>Car Listing</h2>
+
+@if (!Model.Any())
+{
+    <p>We do not have any Cars on this platform yet.</p>
+}
+else
+{
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Car Type
+                </th>
+                <th>
+                   Color
+                </th>
+                <th>
+                   Renting Price
+                </th>
+                <th>
+                    Is Available
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(car.CarType.CarTypeName, "CarInformation", "Cars", new { id = car.CarId }, null)
+                    </td>
+                    <td>
+                        @car.Color.ColorName
+                    </td>
+                    <td>
+                       $ @car.RentingPrice
+                    </td>
+                    <td>
+                        @car.IsAvailable
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
 

@@ -28,7 +28,7 @@ namespace Carsoterix.Web.Controllers
 
         public ActionResult CustomerInfo(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(c => c.CustomerId == id);
+            var customer = _context.Customers.Include(b => b.Bank).SingleOrDefault(c => c.CustomerId == id);
             if(customer==null)
             {
                 return HttpNotFound();

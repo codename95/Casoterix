@@ -228,6 +228,22 @@
     <Compile Include="Migrations\201705060414007_UpdateSeedScript.Designer.cs">
       <DependentUpon>201705060414007_UpdateSeedScript.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705060428557_AddBirthDayAndBankInfoToCustomer.cs" />
+    <Compile Include="Migrations\201705060428557_AddBirthDayAndBankInfoToCustomer.Designer.cs">
+      <DependentUpon>201705060428557_AddBirthDayAndBankInfoToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705060433355_SeedScriptForBank.cs" />
+    <Compile Include="Migrations\201705060433355_SeedScriptForBank.Designer.cs">
+      <DependentUpon>201705060433355_SeedScriptForBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705060454490_AddNewTables.cs" />
+    <Compile Include="Migrations\201705060454490_AddNewTables.Designer.cs">
+      <DependentUpon>201705060454490_AddNewTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705060455411_AddSeedScriptForColorAndCar.cs" />
+    <Compile Include="Migrations\201705060455411_AddSeedScriptForColorAndCar.Designer.cs">
+      <DependentUpon>201705060455411_AddSeedScriptForColorAndCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Car.cs" />
@@ -242,6 +258,22 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap_lumen.css" />
+    <Content Include="Content\Car_Stock\001.PNG" />
+    <Content Include="Content\Car_Stock\002.PNG" />
+    <Content Include="Content\Car_Stock\003.PNG" />
+    <Content Include="Content\Car_Stock\004.PNG" />
+    <Content Include="Content\Car_Stock\005.PNG" />
+    <Content Include="Content\Car_Stock\006.PNG" />
+    <Content Include="Content\Car_Stock\007.PNG" />
+    <Content Include="Content\Car_Stock\008.PNG" />
+    <Content Include="Content\Car_Stock\009.PNG" />
+    <Content Include="Content\Car_Stock\010.PNG" />
+    <Content Include="Content\Car_Stock\011.PNG" />
+    <Content Include="Content\Car_Stock\012.PNG" />
+    <Content Include="Content\Car_Stock\013.PNG" />
+    <Content Include="Content\Car_Stock\015.PNG" />
+    <Content Include="Content\Car_Stock\016.PNG" />
+    <Content Include="Content\Car_Stock\017.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -300,6 +332,7 @@
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\CustomerInfo.cshtml" />
+    <Content Include="Views\Cars\CarInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -343,6 +376,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705060414007_UpdateSeedScript.resx">
       <DependentUpon>201705060414007_UpdateSeedScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060428557_AddBirthDayAndBankInfoToCustomer.resx">
+      <DependentUpon>201705060428557_AddBirthDayAndBankInfoToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060433355_SeedScriptForBank.resx">
+      <DependentUpon>201705060433355_SeedScriptForBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060454490_AddNewTables.resx">
+      <DependentUpon>201705060454490_AddNewTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060455411_AddSeedScriptForColorAndCar.resx">
+      <DependentUpon>201705060455411_AddSeedScriptForColorAndCar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
