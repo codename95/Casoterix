@@ -190,6 +190,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CarsController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -210,6 +211,22 @@
     <Compile Include="Migrations\201705060318337_PopulateMembershipTypes.cs" />
     <Compile Include="Migrations\201705060318337_PopulateMembershipTypes.Designer.cs">
       <DependentUpon>201705060318337_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705060336145_ApplyAnnotationsToCusttomerName.cs" />
+    <Compile Include="Migrations\201705060336145_ApplyAnnotationsToCusttomerName.Designer.cs">
+      <DependentUpon>201705060336145_ApplyAnnotationsToCusttomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705060411213_UpdatemembershipTypeName.cs" />
+    <Compile Include="Migrations\201705060411213_UpdatemembershipTypeName.Designer.cs">
+      <DependentUpon>201705060411213_UpdatemembershipTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705060412438_UpdatestoMembershipType.cs" />
+    <Compile Include="Migrations\201705060412438_UpdatestoMembershipType.Designer.cs">
+      <DependentUpon>201705060412438_UpdatestoMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705060414007_UpdateSeedScript.cs" />
+    <Compile Include="Migrations\201705060414007_UpdateSeedScript.Designer.cs">
+      <DependentUpon>201705060414007_UpdateSeedScript.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -280,6 +297,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Cars\Index.cshtml" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\CustomerInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,6 +331,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705060318337_PopulateMembershipTypes.resx">
       <DependentUpon>201705060318337_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060336145_ApplyAnnotationsToCusttomerName.resx">
+      <DependentUpon>201705060336145_ApplyAnnotationsToCusttomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060411213_UpdatemembershipTypeName.resx">
+      <DependentUpon>201705060411213_UpdatemembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060412438_UpdatestoMembershipType.resx">
+      <DependentUpon>201705060412438_UpdatestoMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060414007_UpdateSeedScript.resx">
+      <DependentUpon>201705060414007_UpdateSeedScript.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
