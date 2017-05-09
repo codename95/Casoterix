@@ -18,17 +18,21 @@ namespace Carsoterix.Web.Controllers
         // GET: Cars
         public ActionResult Index()
         {
-            var cars = _context.Cars.Include(c => c.Color).Include(a => a.CarType).Include(o => o.CarOwner).ToList();
+            var cars = _context.Cars.Include(c => c.Color).Include(a => a.CarType).ToList();
             return View(cars);
         }
         public ActionResult CarInformation(int id)
         {
-            var customer = _context.Cars.Include(a => a.CarType).Include(o => o.CarOwner).SingleOrDefault(c => c.CarId == id);
+            var customer = _context.Cars.Include(a => a.CarType).Include(co => co.Color).SingleOrDefault(c => c.CarId == id);
             if (customer == null)
             {
                 return HttpNotFound();
             }
             return View(customer);
+        }
+        public ActionResult JoinCarsoterix()
+        {
+            return View();
         }
     }
 }

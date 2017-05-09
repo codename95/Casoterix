@@ -13,7 +13,7 @@ namespace Carsoterix.Web.Models
         [StringLength(255)]
         [Display(Name = "Customer Name")]
         public string CustomerName { get; set; }
-        
+        [Display(Name = "Credit Card No")]
         public string CreditCardInformation { get; set; }
         public Bank Bank { get; set; }
         [Display(Name = "Bank")]

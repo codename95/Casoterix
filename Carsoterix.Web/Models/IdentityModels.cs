@@ -24,7 +24,7 @@ namespace Carsoterix.Web.Models
         public DbSet<CarType> CarType { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Bank> Bank { get; set; }
-        public DbSet<CarOwner> CarOwner { get; set; }
+        public DbSet<Account> Account { get; set; }
         public DbSet<Membershiptype> Membershiptype { get; set; }
 
         public ApplicationDbContext()

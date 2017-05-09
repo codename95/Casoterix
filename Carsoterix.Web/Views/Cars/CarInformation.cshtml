@@ -1,6 +1,7 @@
 ﻿@model Carsoterix.Web.Models.Car
 @{
     ViewBag.Title = "CarInformation";
+   <link href = "~/Content/custom.css" rel = "stylesheet" />
 }
 
 <h2>Car Information</h2>
@@ -11,10 +12,18 @@
             <div class="preview col-md-6">
 
                 <div class="preview-pic tab-content">
-                    <div class="tab-pane active" id="pic-1"><img src="~/Content/Cars/@Model.ImagePath" /></div>
+                    <div class="tab-pane active" id="pic-1"><img src="~/Content/Car_Stock/@Model.ImagePath"  width="500" height="300"/></div>
+                    <div class="tab-pane" id="pic-2"><img src="~/Content/Car_Stock/404_large.png"  width="500" height="300"/></div>
+                    <div class="tab-pane" id="pic-3"><img src="~/Content/Car_Stock/404_large.png"  width="500" height="300"/></div>
+                    <div class="tab-pane" id="pic-4"><img src="~/Content/Car_Stock/404_large.png"  width="500" height="300"/></div>
                 </div>
+                <ul class="preview-thumbnail nav nav-tabs">
+                    <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="~/Content/Car_Stock/404.png" /></a></li>
+                    <li><a data-target="#pic-2" data-toggle="tab"><img src="~/Content/Car_Stock/404.png" /></a></li>
+                    <li><a data-target="#pic-3" data-toggle="tab"><img src="~/Content/Car_Stock/404.png" /></a></li>
+                    <li><a data-target="#pic-4" data-toggle="tab"><img src="~/Content/Car_Stock/404.png" /></a></li>
+                </ul>
                 
-
             </div>
             <div class="details col-md-6">
                 <h3 class="product-title">@Model.CarType.CarTypeName</h3>
@@ -27,15 +36,20 @@
                         <span class="glyphicon glyphicon-star"></span>
                     </div>
                     <span class="review-no">41 reviews</span>
+                    
                 </div>
+                <br />
                 <p class="product-description">@Model.Description</p>
                 <h4 class="price">Renting price: <span>$@Model.RentingPrice.ToString()</span></h4>
-                @*<h5 class="colors">
-                    color:
-                    <span class="color @Model.Color.ColorName"></span>
-                </h5>*@
+                <h5 class="colors">
+                    Color:
+                    <span class="color @Model.Color.ColorName">@Model.Color.ColorName</span>&nbsp;|
+                    Year:
+                    <span class="color @Model.Color.ColorName">@Model.Year</span>
+                </h5>
                 <div class="action">
-                    <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                    <button class="add-to-cart btn btn-danger" type="button" onclick="history.go(-1)">Back</button>
+                    <button class="add-to-cart btn btn-default" type="button">Rent Car</button>
                     <button class="like btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span></button>
                 </div>
             </div>

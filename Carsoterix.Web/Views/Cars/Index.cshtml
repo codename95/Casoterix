@@ -1,53 +1,92 @@
 ﻿@model IEnumerable<Carsoterix.Web.Models.Car>
 @{
     ViewBag.Title = "Index";
+    @*<link href="~/Content/custom.css" rel="stylesheet" />
+        <script src="~/Content/CustomJs/custom.js"></script>*@
+    <style>
+        a.list-group-item {
+            height: auto;
+            min-height: 220px;
+        }
+
+            a.list-group-item.active small {
+                color: #fff;
+            }
+
+        .stars {
+            margin: 20px auto 1px;
+        }
+    </style>
 }
 
 <h2>Car Listing</h2>
-
+<hr />
 @if (!Model.Any())
 {
     <p>We do not have any Cars on this platform yet.</p>
 }
-else
-{
-    <table class="table table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>
-                    Car Type
-                </th>
-                <th>
-                   Color
-                </th>
-                <th>
-                   Renting Price
-                </th>
-                <th>
-                    Is Available
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var car in Model)
+
+    @*<div class="col-md-12">
+            @foreach (var cars in Model)
             {
-                <tr>
-                    <td>
-                        @Html.ActionLink(car.CarType.CarTypeName, "CarInformation", "Cars", new { id = car.CarId }, null)
-                    </td>
-                    <td>
-                        @car.Color.ColorName
-                    </td>
-                    <td>
-                       $ @car.RentingPrice
-                    </td>
-                    <td>
-                        @car.IsAvailable
-                    </td>
-                </tr>
+               <div class="col-md-3">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>@cars.CarType.CarTypeName</h4>
+                            <p>Renting Price: @cars.RentingPrice</p>
+                            <p>
+                                <a href="/Cars/CarInformation/@cars.CarId" class="label label-danger" rel="tooltip" title="Zoom">Detail</a>
+                                <a href="" class="label label-default" rel="tooltip" title="Download now">Rent Car</a>
+                            </p>
+                        </div>
+                        <img src="~/Content/Car_Stock/@cars.ImagePath" alt="..." height="200" width="260">
+                    </div>
+                </div>
             }
-        </tbody>
-    </table>
-}
+        </div>*@
 
 
+    <div class="container">
+        <div class="row">
+            <div class="well">
+                <h1 class="text-center">Vote for your favorite</h1>
+                <div class="list-group">
+                    @foreach (var cars in Model)
+                    {
+                        <a href="/Cars/CarInformation/@cars.CarId" class="list-group-item">
+                            <div class="media col-md-3">
+                                <figure class="pull-left">
+                                    <img class="media-object img-rounded img-responsive" src="~/Content/Car_Stock/@cars.ImagePath" alt="placehold.it/350x250">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="list-group-item-heading"> @cars.CarType.CarTypeName - @cars.Color.ColorName </h4>
+                                <p class="list-group-item-text">
+                                    @cars.Description
+                                </p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h2>
+                                    $ @cars.RentingPrice <small>
+                                        @if (cars.IsAvailable)
+                                        { <strong>A</strong> }
+                                        else
+                                        { <strong>N/A</strong>}
+                                    </small>
+                                </h2>
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Rent Now!</button>
+                                <div class="stars">
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </div>
+                                <p> Average 4.1 <small> / </small> 5 </p>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>

@@ -23,10 +23,10 @@ namespace Carsoterix.Web.Models
         public DateTime DateAdded { get; set; }
         [ScaffoldColumn(false)]
         public string ImagePath { get; set; }
-        public CarOwner CarOwner { get; set; }
+        public Account Account  { get; set; }
         public string Description { get; set; }
         [Display(Name = "Car Owned By")]
-        public byte CarOwnerId { get; set; }
+        public string AccountId { get; set; }
        // [ScaffoldColumn(false)]
         public bool IsAvailable { get; set; }
         public Color Color { get; set; }
@@ -34,12 +34,11 @@ namespace Carsoterix.Web.Models
         public byte ColorId { get; set; }
     }
 
-    public class CarOwner
+    public class Account
     {
         [Key]
-        public byte CarOwnerId { get; set; }
-        public string OwnerName { get; set; }
-        public DateTime DateCreated { get; set; }
+        public string AccountId { get; set; }
+        public string Notes { get; set; }
         public byte PercentageInterest { get; set; } //Interest Accruable to Owner for lease 
     }
 

@@ -22,8 +22,14 @@ else
                     Membership Type
                 </th>
                 <th>
+                  Bank
+                </th>
+                <th>
                     Discount Rate
                 </th>
+                <td>
+
+                </td>
             </tr>
         </thead>
         <tbody>
@@ -36,8 +42,15 @@ else
                     <td>
                         @customer.MembershipType.MembershipTypeName
                     </td>
+                    <th>
+                      @customer.Bank.BankName
+                    </th>
                     <td>
                        @customer.MembershipType.Discount%
+                    </td>
+                    <td>
+                        @Html.ActionLink("View", "CustomerInfo", "Customers", new { id = customer.CustomerId }, null) &nbsp;|
+                        @Html.ActionLink("Edit", "Edit", "Customers", new { id = customer.CustomerId }, null)
                     </td>
                 </tr>
             }
